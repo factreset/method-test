@@ -1,0 +1,16 @@
+containers:
+  - name: app
+    dockerfile: Dockerfile
+services:
+  - name: web
+    container: app
+    ports:
+      - name: http
+        port: 3000   # Change this to your app's port
+deploys:
+  - name: prod
+    services:
+      - service: web
+        host: localhost
+        port: 80
+        target: http
