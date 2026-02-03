@@ -1,6 +1,6 @@
 containers:
   - name: app
-    dockerfile: Dockerfile
+    dockerfile: app/Dockerfile
 services:
   - name: web
     container: app
