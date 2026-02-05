@@ -12,5 +12,5 @@ deploys:
     services:
       - service: web
         host: localhost
-        port: 80
+        port: 8080
         target: http
