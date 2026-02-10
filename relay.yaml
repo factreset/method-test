@@ -2,7 +2,7 @@ containers:
   - name: app
     dockerfile: app/Dockerfile
     env:
-      DATABASE_URL: "postgres://postgres:postgres@host.docker.internal:9002/method_test"
+      DATABASE_URL: "postgres://postgres:postgres@host.docker.internal:5433/method_test"
   - name: db
     dockerfile: db/Dockerfile
     env:
@@ -24,6 +24,7 @@ services:
     ports:
       - name: pg
         port: 5432
+        proto: tcp
 
 deploys:
   - name: prod
@@ -33,6 +34,7 @@ deploys:
         port: 8080
         target: http
       - service: database
-        host: localhost
-        port: 5432
+        host: method-test-db.relay
+        port: 5433
         target: pg
+        proxy: tcp
