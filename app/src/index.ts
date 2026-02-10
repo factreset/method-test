@@ -105,7 +105,7 @@ const server = Bun.serve({
 <body>
   <div class="container">
     <h1>🚀 Method Test</h1>
-    <p class="subtitle">Bun + Docker Demo Application — let's rock, let's rock todaysies!</p>
+    <p class="subtitle">Bun + Docker Demo Application — let's rock, let's rock like Vasquez!</p>
     
     <ul class="module-list">
       <li class="module-item">
