@@ -1,12 +1,30 @@
 containers:
   - name: app
     dockerfile: app/Dockerfile
+    env:
+      DATABASE_URL: "postgres://postgres:postgres@host.docker.internal:5432/method_test"
+  - name: db
+    dockerfile: db/Dockerfile
+    env:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: method_test
+    volumes:
+      - name: pgdata
+        mount: /var/lib/postgresql/data
+
 services:
   - name: web
     container: app
     ports:
       - name: http
-        port: 3000   # Change this to your app's port
+        port: 3000
+  - name: database
+    container: db
+    ports:
+      - name: pg
+        port: 5432
+
 deploys:
   - name: prod
     services:
@@ -14,3 +32,7 @@ deploys:
         host: localhost
         port: 8080
         target: http
+      - service: database
+        host: localhost
+        port: 5432
+        target: pg
