@@ -30,11 +30,24 @@ deploys:
   - name: prod
     services:
       - service: web
-        host: localhost
-        port: 8080
+        # host: localhost
+        # port: 8080
+        host: m
+        port: 443
         target: http
       - service: database
         host: method-test-db.relay
         port: 5433
         target: pg
         proxy: tcp
+
+
+
+
+deploys:
+  - name: prod
+    services:
+      - service: web
+        host: method-test.relay
+        port: 443
+        target: http
