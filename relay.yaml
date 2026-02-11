@@ -32,22 +32,12 @@ deploys:
       - service: web
         # host: localhost
         # port: 8080
-        host: m
+        host: method-test.hostbo.cx
         port: 443
         target: http
       - service: database
-        host: method-test-db.relay
+        host: method-test-db.hostbo.cx
         port: 5433
         target: pg
         proxy: tcp
 
-
-
-
-deploys:
-  - name: prod
-    services:
-      - service: web
-        host: method-test.relay
-        port: 443
-        target: http
