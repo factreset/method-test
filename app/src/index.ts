@@ -211,7 +211,7 @@ const server = Bun.serve({
 <body>
   <div class="container">
     <h1>🚀 Method Test</h1>
-    <p class="subtitle">Bun + Docker + Postgres — deployed with Relayability</p>
+    <p class="subtitle">Bun + Docker + Postgres — deployed with Relayabilities</p>
     <p class="subtitle">Wonder if it workses</p>
 
     <div class="section-title">📦 Node Modules</div>
