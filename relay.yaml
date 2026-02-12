@@ -36,7 +36,7 @@ deploys:
         port: 443
         target: http
       - service: database
-        host: method-test-db.hostbo.cx
+        host: method-test-db.relay
         port: 5433
         target: pg
         proxy: tcp
