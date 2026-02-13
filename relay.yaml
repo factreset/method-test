@@ -2,7 +2,8 @@ containers:
   - name: app
     dockerfile: app/Dockerfile
     env:
-      DATABASE_URL: "postgres://postgres:postgres@host.docker.internal:5433/method_test"
+      # DATABASE_URL: "postgres://postgres:postgres@host.docker.internal:5433/method_test"
+      DATABASE_URL: "postgres://postgres:postgres@method-test-db.relay:5433/method_test"
   - name: db
     dockerfile: db/Dockerfile
     env:
