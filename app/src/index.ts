@@ -6,7 +6,9 @@ import pg from "pg";
 const { Pool } = pg;
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL || "postgres://postgres:postgres@localhost:5432/method_test",
+  // connectionString: process.env.DATABASE_URL || "postgres://postgres:postgres@localhost:5432/method_test",
+  // postgres://postgres:postgres@method-test-db.relay:5433/method_test
+  connectionString: "postgres://postgres:postgres@method-test-db.relay:5434/method_test",
 });
 
 async function getDbData() {
